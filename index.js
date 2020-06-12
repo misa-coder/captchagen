@@ -22,8 +22,9 @@ module.exports = {
   
   // use default settings
   create: function (opt) {
+    let bg = opt.bg || true
     var cap = new Captcha(opt);
-    cap.use(drawBackground);
+    if(bg) cap.use(drawBackground);
     cap.use(drawLines);
     cap.use(drawText);
     cap.use(drawLines);
